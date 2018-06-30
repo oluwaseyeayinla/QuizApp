@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">Country Music Trivia</string>
+    <string name="correct">Correct</string>
+    <string name="wrong">Wrong</string>
+    <string name="best">Best</string>
+    <string name="answered">Answered</string>
+    <string name="reset">Reset</string>
+    <string name="submit">Submit</string>
+    <string name="bg_image_description">background image of quiz app</string>
+
+    <!-- Questions -->
+    <string name="question_01">What year did country artist "Scotty Mccreery" win the American Idols?</string>
+    <string name="question_02">What is the name of the Legendary Country Artist below?</string>
+    <string name="question_03">Figure out a single word that links to the 4 pictures below?</string>
+    <string name="question_04">Which of these Artists are not signed to Big Machine Records in Nashville Tennessee?</string>
+    <string name="question_05">Which country artist is currently a judge on the American Idols show?</string>
+    <string name="question_06">Nashville city in Tennessee is home to country music?</string>
+    <string name="question_07">Which country artist wrote a song about the famous programming word “Hello World”?</string>
+    <string name="question_08">Which artists are tied on the same number of Grammy Awards for the Best Country Album?</string>
+
+    <!-- Question 1 Hint -->
+    <string name="year_option">2011, 2013 or 2015?</string>
+
+    <!-- Question 1 Answer -->
+    <string name="year_2011">2011</string>
+
+    <!-- Question 2 Options -->
+    <string name="dolly_parton">Dolly Parton</string>
+    <string name="faith_hill">Faith Hill</string>
+    <string name="reba_mcentire">Reba McEntire</string>
+    <string name="shania_twain">Shania Twain</string>
+
+    <!-- Question 3 Hint -->
+    <string name="one_word">One Word</string>
+
+    <!-- Question 3 Answer -->
+    <string name="band">Band</string>
+    <string name="group">Group</string>
+
+    <!-- Question 4 Options -->
+    <string name="luke_bryan">Luke Bryan</string>
+    <string name="little_big_town">Little Big Town</string>
+    <string name="florida_georgia_line">Florida Georgia Line</string>
+    <string name="lady_antebellum">Lady Antebellum</string>
+
+    <!-- Question 5 Options -->
+    <string name="blake_shelton">Blake Shelton</string>
+    <string name="brad_paisley">Brad Paisley</string>
+    <string name="tim_mcgraw">Tim McGraw</string>
+
+    <!-- Question 6 Options -->
+    <string name="true_">True</string>
+    <string name="false_">False</string>
+
+    <!-- Question 7 Options -->
+    <string name="devin_dawson">Devin Dawson</string>
+    <string name="rascall_flats">Rascall_Flats</string>
+    <string name="taylor_swift">Taylor Swift</string>
+
+    <!-- Question 8 Options -->
+    <string name="dixie_chicks">Dixie Chicks</string>
+    <string name="chris_stapleton">Chris Stapleton</string>
+    <string name="roger_miller">Roger Miller</string>
+
+    <!--
+      Display the result of the quiz. It will be in the format of "Your score is 2 out of 10"
+      where 2 is the user's score and 10 is the total number of questions. [CHAR LIMIT=NONE]
+    -->
+    <string name="toast_score_message">Your score is %d out of %d</string>
+
+    <!--
+      Display ratio of the number of answered questions to the total questions. It will be in the format of "4/8"
+      where 4 is the number of questions answered and 8 is the total number of questions. [CHAR LIMIT=NONE]
+    -->
+    <string name="answered_progress_ratio">%d / %d</string>
+
+    <!--
+      Shared preference key used to hold the best or highest score from a particular quiz session
+    -->
+    <string name="best_score_key">com.example.android.quizapp.PREFERENCE_FILE_KEY</string>
+</resources>
