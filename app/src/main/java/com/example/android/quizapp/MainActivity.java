@@ -21,9 +21,11 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
 {
+    final long ONE_MILLISECOND = 1000;
     final int NUMBER_OF_QUESTIONS = 8;
     final int NUMBER_OF_STARS = 5;
 
+    long quitTime = 0;
     int answeredQuestions= 0;
     boolean finished = false;
 
@@ -61,10 +63,37 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onBackPressed()
-    {
-        // on hardware back button pressed, quit the app
-        quitApp();
+    public void onBackPressed() {
+        if (quitTime < System.currentTimeMillis()) {
+            // on hardware back button pressed, confirm notification by toast
+            confirmQuit();
+        } else {
+            // on hardware back button pressed, quit the app
+            quitApp();
+        }
+    }
+
+    /**
+     *
+     */
+    void confirmQuit() {
+        // display confirm toast
+        Toast.makeText(getApplicationContext(), "Press back again to exit", Toast.LENGTH_LONG).show();
+        quitTime = System.currentTimeMillis() + (ONE_MILLISECOND * 5);
+    }
+
+    /**
+     * Quit and exit the application.
+     */
+    void quitApp() {
+        // drop activity from memory
+        finish();
+
+        // kill the current activity
+        int pid = android.os.Process.myPid();
+        android.os.Process.killProcess(pid);
+
+        System.exit(0);
     }
 
     /**
@@ -672,7 +701,6 @@ public class MainActivity extends AppCompatActivity
         public void beforeTextChanged(CharSequence s, int start, int count, int after)
         {
             // update any changes to the answered questions value when an edit text value has been changed
-            //isAnyQuestionUnanswered();
         }
 
         @Override
@@ -686,7 +714,6 @@ public class MainActivity extends AppCompatActivity
         public void afterTextChanged(Editable s)
         {
             // update any changes to the answered questions value when an edit text value has been changed
-            //isAnyQuestionUnanswered();
         }
     };
 
@@ -714,19 +741,4 @@ public class MainActivity extends AppCompatActivity
             isAnyQuestionUnanswered();
         }
     };
-
-    /**
-     * Quit and exit the application.
-     */
-    void quitApp()
-    {
-        // drop activity from memory
-        finish();
-
-        // kill the current activity
-        int pid = android.os.Process.myPid();
-        android.os.Process.killProcess(pid);
-
-        System.exit(0);
-    }
 }
